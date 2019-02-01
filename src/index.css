@@ -7,8 +7,72 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* 0C57FB • EBF0F4 • FFFFFF • 1D2B3B */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.navbar{
+  background-color: #1D2B3B;
+}
+
+.navbar-brand,.nav-link{
+  color: #fff !important;
+}
+
+img{
+  max-width: 100%;
+}
+
+.searchbar{
+  background-color: transparent !important;
+  border: 0;
+  text-align: right;
+  color: #fff !important;
+  border-radius: 0;
+  outline: none !important;
+}
+
+.form-control{  
+  transition: none !important;
+}
+
+.thumbnail{
+  background-color: #EBF0F4;
+  margin: 10px auto;
+  border: 2px solid #000;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #EAEDF3;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+
+.company-logo{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-left: 25px;
+}
+
+strong>a{
+  color: #0C57FB;
+  font-size: 14px;
+}
+
+.strong{
+  display: flex;
+  justify-content: space-between;
+}
+
+.apply{
+  margin-right: 25px;
+  color: #fff;
+  background-color: #1D2B3B;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.apply:hover{
+  color: #fff;
 }
