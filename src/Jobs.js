@@ -13,7 +13,7 @@ export default function Jobs(props){
                     </h6>
                     <strong className="strong">
                         <a href={props.company_url ? props.company_url : '#'}>@ {props.company}</a>
-                        <a className="apply" href={props.apply}>Apply Here</a>
+                        <a className="apply" target="_blank" rel="noopener noreferrer" style={props.apply === '#' ? {opacity: 0} : {opacity: 1}} href={props.apply !== '#' ? props.apply : '#'}>Apply Here</a>
                     </strong>
                     <small className="date">
                         Posted on {props.created_at}
