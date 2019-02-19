@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Jobs from './Jobs';
+import { connect } from 'react-redux'
+import { fetchJobs } from './actions'
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      jobs: []
+      searchterm: ''
     }
   }
 
-  fetchJobs = (description) => {
-    console.log(description)
-    fetch(`https://jobs.github.com/positions.json?markdown=true&description=${description === undefined ? '' : description}`)
-    .then(res => res.json())
-    .then(jobs => this.setState({jobs}))
+  fetchGithubJobs(description) {    
+    this.props.dispatch(fetchJobs(description))
   }
 
   componentWillMount(){
-    this.fetchJobs()
+    this.fetchGithubJobs('react')
   }
 
   componentDidUpdate(prevProps, prevState) {
     if(prevState.searchterm !== this.state.searchterm)
-      this.fetchJobs(this.state.searchterm)
+      this.fetchGithubJobs(this.state.searchterm)
   }
 
   apply = (data, company) => {
@@ -41,14 +40,14 @@ class App extends Component {
   }
 
   render() {
-    const { jobs, linkerror } = this.state
+    const { jobs, loading } = this.props
     console.log(jobs)
     return (
       <div className="App">
         <Navbar 
           searchJob={this.searchJob}
         /> <br/>
-        <div className="container">
+        {/* <div className="container">
           {jobs && jobs.map(job => (
             <Jobs 
             id={job.id}
@@ -62,13 +61,19 @@ class App extends Component {
             apply={this.apply(job.how_to_apply, job.company_url)}
             location={job.location}
             type={job.type}
-            linkerror={linkerror}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    jobs: state,
+  }
+}
+
+export default connect(mapStateToProps)(App);
