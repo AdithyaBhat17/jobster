@@ -14,7 +14,8 @@ export default function fetchReducer(state = initialState, action){
     switch(action.type){
         case FETCH_JOBS_INIT: 
             return {
-                ...state
+                ...state,
+                loading: true
             }
         case FETCH_JOBS_SUCCESS: 
             return {
@@ -25,7 +26,8 @@ export default function fetchReducer(state = initialState, action){
         case FETCH_JOBS_FAILED: 
             return {
                 ...state,
-                loadError: action.error
+                loadError: action.error,
+                loading: false
             }
         default: 
             return state
