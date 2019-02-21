@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 export default function Jobs(props){
+    const [description, setDescription] = useState(false)
     return(
         props.company_logo && (<div className="thumbnail">
             <div className="row">
@@ -17,9 +19,18 @@ export default function Jobs(props){
                     </strong>
                     <small className="date">
                         Posted on {props.created_at} &nbsp; &nbsp;
-                        <i className="fas fa-map-marker-alt"></i> {props.location}
+                        <i className="fas fa-map-marker-alt"></i> {props.location} &nbsp; &nbsp;
+                        <span className="read" onClick={() => setDescription(!description)}>
+                        {description === false ? <span>Read More <i className="fa fa-angle-down"></i></span> :
+                        <span>Read Less <i className="fa fa-angle-up"></i></span>}
+                        </span>
                     </small>
                 </div>
+                {description === true && (
+                    <div className="container desc">
+                        <ReactMarkdown source={props.desc} />
+                    </div>
+                )}
             </div>
         </div>)
     )
