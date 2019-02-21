@@ -34,6 +34,10 @@ img{
   transition: none !important;
 }
 
+.read{
+  color: #1D2B3B;
+}
+
 .thumbnail{
   background-color: #EBF0F4;
   margin: 10px auto;
@@ -44,6 +48,15 @@ img{
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
   border-radius: 4px;
+}
+
+p>strong {
+  color: #1D2B3B;
+}
+
+.desc {
+  width : 90%;
+  margin-top: 15px;
 }
 
 .company-logo{
@@ -76,4 +89,11 @@ strong>a{
 
 .apply:hover{
   color: #fff;
+}
+
+@media only screen and (max-width: 500px){
+  .thumbnail {
+    width: 100%;
+    display: flex;
+  }
 }
