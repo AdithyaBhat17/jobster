@@ -13,10 +13,7 @@ const initialState = {
 export default function fetchReducer(state = initialState, action){
     switch(action.type){
         case FETCH_JOBS_INIT: 
-            return {
-                ...state,
-                loading: true
-            }
+            return state
         case FETCH_JOBS_SUCCESS: 
             return {
                 ...state,
