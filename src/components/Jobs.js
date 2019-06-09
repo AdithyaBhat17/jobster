@@ -14,15 +14,15 @@ export default function Jobs(props){
                         {props.title}
                     </h6>
                     <strong className="strong">
-                        <a target="_blank" rel="noopener noreferrer" href={props.company_url ? props.company_url : '#'}>@ {props.company}</a>
+                        <a target="_blank" rel="noopener noreferrer" href={props.company_url ? props.company_url : '#'}>@ {props.company}</a> <br style={{lineHeight: '35px'}} className="hide"/> 
                         <a className="apply" target={props.apply !== '#' ? '_blank' : 'false'} rel="noopener noreferrer" style={props.apply === '#' ? {opacity: 0} : {opacity: 1}} href={props.apply !== '#' ? props.apply : '#'}>Apply Here</a>
                     </strong>
                     <small className="date">
                         Posted on {props.created_at} &nbsp; &nbsp;
                         <i className="fas fa-map-marker-alt"></i> {props.location} &nbsp; &nbsp;
-                        <span className="read" onClick={() => setDescription(!description)}>
-                        {description === false ? <span>Read More <i className="fa fa-angle-down"></i></span> :
-                        <span>Read Less <i className="fa fa-angle-up"></i></span>}
+                        <span className="read" onClick={() => setDescription(!description)}> <br className="hide"/>
+                        {description === false ? <span className='read_ml'>Read More <i className="fa fa-angle-down"></i></span> :
+                        <span className='read_ml'>Read Less <i className="fa fa-angle-up"></i></span>}
                         </span>
                     </small>
                 </div>

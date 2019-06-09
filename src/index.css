@@ -13,6 +13,10 @@ body {
   background-color: #1D2B3B;
 }
 
+h6 {
+  font-weight: bold;
+}
+
 .navbar-brand,.nav-link{
   color: #fff !important;
 }
@@ -91,9 +95,47 @@ strong>a{
   color: #fff;
 }
 
-@media only screen and (max-width: 500px){
-  .thumbnail {
+.hide {
+  display: none;
+}
+
+@media only screen and (max-width: 768px){
+  .thumbnail, .thumbnail > .row {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .company-logo {
+    margin-left: 10px;
+  }
+  .apply {
+    margin-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .thumbnail, .thumbnail > .row {
+    width: 100%;
+    display: block !important;
+    /* justify-content: space-between;
+    align-items: center; */
+  }
+  .company-logo {
+    margin: 5px auto 10px 10px;
+    
+  }
+  .strong {
+    display: block;
+  }
+  .apply {
+    margin-top: 0 auto 15px 10px;
+
+  }
+  .hide {
+    display: block;
+  }
+  .read_ml {
+    font-weight: bold;
   }
 }
