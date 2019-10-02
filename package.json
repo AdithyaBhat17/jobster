@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.2",
-    "react-dom": "^16.8.2",
+    "react-dom": "^16.10.1",
     "react-epic-spinners": "^0.3.0",
     "react-markdown": "^4.0.6",
     "react-redux": "^6.0.1",
